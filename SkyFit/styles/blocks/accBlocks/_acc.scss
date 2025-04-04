@@ -1,0 +1,43 @@
+@use '../../helpers' as *;
+
+.registration{
+
+    height: 100vh;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: rem(20);
+    @include fluid-text(18, 14);
+
+    &__heading{
+        @include fluid-text(45, 20);
+    }
+
+    &__forms{
+    background-color: var(--color-background);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: fluid(60, 25);
+    border-radius: rem(30);
+    row-gap: rem(30);
+    box-shadow: 0 0 rem(30) rgb(0, 0, 0);
+    }
+}
+
+#name, #email, #password, #surname{
+    border-bottom: rem(1) solid var(--color-text);
+    width:clamp(rem(250), 43vw, rem(700));
+    font-family: var(--font-family-accent);
+    &::placeholder{
+        color:var(--color-light);
+    }
+}
+
+#fileUpload{
+    width: 100%;
+    @include fluid-text(15, 10);
+}

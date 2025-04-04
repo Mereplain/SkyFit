@@ -1,0 +1,33 @@
+@use '../../helpers' as *;
+
+.button{
+    display:inline-block;
+    padding: var(--button-padding);
+    background-color: var(--color-background);
+    box-shadow:var(--main-box-shadow);
+    border-radius: var(--border-radius-base);
+    white-space: nowrap;
+    transition: var(--transition-duraction-faster);
+    color: var(--color-text);
+    z-index: 10;
+    @include fluid-text(20, 14);
+    
+    &:hover{
+        background-color: var(--color-light-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px #ffffff1f;
+    }
+    
+}
+
+.button--arrow{
+    border-radius: var(--border-radius-circle);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(20);
+}
+
+.button--arrow-left .arrow{
+    rotate: 180deg;
+}

@@ -1,0 +1,93 @@
+@use 'helpers' as *;
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    width:100%;
+    height: 100%;
+    
+    @include fluid-text(25, 14);
+    font-weight: 400;
+    font-family: var(--font-family-base);
+    font-weight: 300;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: var(--color-light);
+    text-shadow: var(--main-heading-shadow);
+}
+h1, .h1,
+h2, .h2,
+h3, .h3{
+    font-weight: 500;
+}
+
+h1, .h1 {
+    @include fluid-text(65, 30);
+}
+
+h2, .h2 {
+    @include fluid-text(65, 30);
+}
+
+h3, .h3 {
+    @include fluid-text(50, 30);
+}
+
+h4, .h4 {
+    @include fluid-text(36, 24);
+}
+
+h5, .h5 {
+    @include fluid-text(24, 18);
+}
+
+h6, .h6 {
+    @include fluid-text(20, 16);
+}
+
+button,
+label,
+input,
+textarea,
+a,
+select,
+svg * {
+    transition-duration: var(--transition-duraction-faster);
+}
+
+a{
+    color:var(--color-light);
+}
+
+section{
+    opacity: var(--main-opacity-sections);
+    transition: 0.5s;
+}
+
+.section-visible{
+    --main-opacity-sections: 1;
+    animation: raisingSectionToTheTop 0.5s;
+    @keyframes raisingSectionToTheTop{
+        from{
+            top: rem(100);
+        }
+        to{
+            top:0;
+        }
+    }
+}
+
+.lightThem{
+    --color-light: #000000;
+    --color-dark-blue: #b9b9b9;
+}
